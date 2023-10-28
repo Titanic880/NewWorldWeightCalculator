@@ -3,7 +3,7 @@ namespace New_World_Armor_Weight_Calculator
     public partial class Form1 : Form
     {
         private readonly string[] ExpectedValues = { "Light", "Medium", "Heavy", "N/A" };
-        private readonly double[] WeightClassThresholds = { 13, 22.9 };
+        private readonly double[] WeightClassThresholds = { 13, 23 };
         //Head,Chest,Gloves,Pants,Boots,Shield
         private readonly double[][] WeightValues = new double[][]
         {
@@ -32,6 +32,13 @@ namespace New_World_Armor_Weight_Calculator
                 MessageBox.Show("Invalid Data");
                 return;
             }
+            LblHelmWeight.Text = WeightValues[CBHelm.SelectedIndex][0].ToString();
+            LblChestWeight.Text = WeightValues[CBChest.SelectedIndex][1].ToString();
+            LblGloveWeight.Text = WeightValues[CBGloves.SelectedIndex][2].ToString();
+            LblPantsWeight.Text = WeightValues[CBPants.SelectedIndex][3].ToString();
+            LblBootsWeight.Text = WeightValues[CBBoots.SelectedIndex][4].ToString();
+            LblShieldWeight.Text = WeightValues[CBShield.SelectedIndex][5].ToString();
+
             double FinalWeight = 0;
             FinalWeight += WeightValues[CBHelm.SelectedIndex][0];
             FinalWeight += WeightValues[CBChest.SelectedIndex][1];
